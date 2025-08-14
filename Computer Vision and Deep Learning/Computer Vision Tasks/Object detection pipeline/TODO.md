@@ -1,0 +1,20 @@
+# Object Detection Pipeline - TODO
+
+## Project Overview
+Build an end-to-end object detection system.
+
+## Tasks
+- [ ] Set up project structure
+- [ ] Choose detection framework (YOLO, R-CNN, etc.)
+- [ ] Prepare annotated dataset
+- [ ] Implement data preprocessing
+- [ ] Train object detection model
+- [ ] Add non-maximum suppression
+- [ ] Create inference pipeline
+- [ ] Evaluate performance (mAP, precision, recall)
+- [ ] Document results
+
+## Notes
+- Consider real-time vs accuracy trade-offs
+- Implement bounding box visualization
+- Test on different object categories
