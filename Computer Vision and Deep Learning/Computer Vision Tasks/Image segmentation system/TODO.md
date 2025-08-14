@@ -19,3 +19,4 @@ Build semantic or instance segmentation models for pixel-level classification.
 - Use segmentation_models_pytorch or TensorFlow for U-Net implementations
 - Implement Dice and IoU metrics using PyTorch or TensorFlow functions
 - PyTorch Lightning for training structure and TorchMetrics for segmentation metrics
+- Hugging Face transformers for transformer-based segmentation models (SegFormer, Mask2Former)

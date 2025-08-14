@@ -19,3 +19,4 @@ Implement generative models for image synthesis or reconstruction.
 - For Autoencoder: Consider using PyTorch Lightning for easier training loops
 - Use torchvision or PIL for image processing and matplotlib for visualization
 - TorchMetrics can help with tracking training metrics consistently
+- Hugging Face diffusers for modern diffusion models and image generation

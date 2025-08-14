@@ -20,3 +20,4 @@ Build a production-ready API for serving machine learning models using Flask/Fas
 - Consider async support for better performance
 - Implement proper input validation and sanitization
 - Add health check endpoints
+- Use Hugging Face transformers for easy model loading and inference

@@ -19,3 +19,4 @@ Create an interactive web demo showcasing your research using Streamlit/Gradio.
 - Focus on clear explanations and intuitive interface
 - Add educational content about your research
 - Consider mobile responsiveness
+- Use Hugging Face Spaces for easy deployment and Gradio for quick demos

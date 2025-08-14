@@ -19,3 +19,4 @@ Design and implement a novel neural network architecture for a specific task.
 - Focus on clear motivation for design choices
 - Ensure fair comparison with existing methods
 - Consider both performance and efficiency
+- Use Hugging Face transformers as baseline for comparison with modern architectures
