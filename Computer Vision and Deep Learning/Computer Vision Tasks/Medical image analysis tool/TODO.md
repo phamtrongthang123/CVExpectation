@@ -18,3 +18,4 @@ Develop tools for analyzing medical images (X-rays, MRI, CT scans, etc.).
 - Focus on specific medical condition (pneumonia, tumors, etc.)
 - Use pydicom for DICOM file handling and SimpleITK for medical image processing
 - Consider class imbalance with scikit-learn's imbalanced-learn library
+- PyTorch Lightning for medical model training and TorchMetrics for medical-specific metrics

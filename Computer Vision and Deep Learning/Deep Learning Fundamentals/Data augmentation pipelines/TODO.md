@@ -19,3 +19,4 @@ Build comprehensive data augmentation systems for computer vision.
 - Use libraries like albumentations, torchvision.transforms, or imgaug
 - Include rotation, scaling, cropping, flipping with OpenCV or PIL
 - Implement advanced techniques like MixUp and CutMix using PyTorch
+- Consider PyTorch Lightning for cleaner training code structure

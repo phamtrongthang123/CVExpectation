@@ -19,3 +19,4 @@ Implement specialized loss functions and flexible training procedures.
 - Implement losses like Focal, Dice, Triplet using PyTorch or TensorFlow
 - Use libraries like torch.optim for optimizers and torch.amp for mixed precision
 - Implement gradient clipping with torch.nn.utils.clip_grad_norm_
+- Consider PyTorch Lightning for structured training loops and TorchMetrics for evaluation

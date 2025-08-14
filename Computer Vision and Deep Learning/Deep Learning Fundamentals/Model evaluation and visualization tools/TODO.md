@@ -19,3 +19,4 @@ Create comprehensive tools for model analysis and performance visualization.
 - Use scikit-learn for metrics and matplotlib/seaborn for visualization
 - Implement CAM/Grad-CAM using captum or pytorch-grad-cam libraries
 - Use scipy.stats for statistical significance testing
+- Consider TorchMetrics for comprehensive PyTorch-based evaluation metrics

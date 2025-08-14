@@ -18,3 +18,4 @@ Build an end-to-end object detection system.
 - Consider real-time vs accuracy trade-offs
 - Use libraries like ultralytics (YOLOv8), detectron2, or torchvision for detection
 - Implement bounding box visualization with OpenCV or matplotlib
+- PyTorch Lightning for training structure and TorchMetrics for detection metrics (mAP)

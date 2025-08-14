@@ -16,5 +16,6 @@ Implement generative models for image synthesis or reconstruction.
 
 ## Notes
 - For GAN: Use PyTorch or TensorFlow implementations with proper loss functions
-- For Autoencoder: Consider using PyTorch Lightning for easier training
+- For Autoencoder: Consider using PyTorch Lightning for easier training loops
 - Use torchvision or PIL for image processing and matplotlib for visualization
+- TorchMetrics can help with tracking training metrics consistently
