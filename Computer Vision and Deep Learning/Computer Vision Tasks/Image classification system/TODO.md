@@ -14,6 +14,6 @@ Build a CNN from scratch or fine-tune existing models for image classification.
 - [ ] Document results
 
 ## Notes
-- Consider using transfer learning with pre-trained models
-- Experiment with different architectures (ResNet, VGG, etc.)
-- Track model performance and hyperparameters
+- Consider using transfer learning with pre-trained models (torchvision, tensorflow.keras)
+- Experiment with different architectures using PyTorch or TensorFlow
+- Use libraries like scikit-learn for metrics and matplotlib/seaborn for visualization

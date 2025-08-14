@@ -18,4 +18,4 @@ Build a comprehensive dashboard for monitoring ML model performance.
 ## Notes
 - Focus on clear, actionable insights
 - Support multiple models and environments
-- Consider using tools like Plotly Dash or Streamlit
+- Use Python tools like Plotly Dash, Streamlit, or Flask with Plotly

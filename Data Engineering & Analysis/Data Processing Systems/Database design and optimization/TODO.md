@@ -16,6 +16,6 @@ Design and optimize databases for ML and analytics workloads.
 - [ ] Document design decisions
 
 ## Notes
-- Consider both relational and NoSQL solutions
+- Consider both SQLite/PostgreSQL (relational) and MongoDB (NoSQL) with Python
 - Focus on scalability and performance requirements
-- Implement proper security and access controls
+- Use SQLAlchemy or PyMongo for database operations

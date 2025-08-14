@@ -16,6 +16,6 @@ Create interactive dashboards for data exploration and business intelligence.
 - [ ] Deploy and maintain dashboard
 
 ## Notes
-- Use tools like Plotly Dash, Tableau, or Power BI
+- Use Python tools like Plotly Dash, Streamlit, or Flask with Plotly/Bokeh
 - Focus on user experience and intuitive design
 - Ensure responsive design for different screen sizes

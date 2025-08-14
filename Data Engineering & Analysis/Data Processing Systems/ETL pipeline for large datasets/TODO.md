@@ -16,6 +16,7 @@ Build scalable ETL (Extract, Transform, Load) pipelines for processing large dat
 - [ ] Optimize for performance and scalability
 
 ## Notes
-- Consider using tools like Apache Airflow, Spark, or Pandas
+- Use Python tools like Pandas, Dask, or Luigi for orchestration
+- Consider SQLAlchemy for database operations
 - Focus on fault tolerance and data consistency
 - Implement proper data partitioning strategies

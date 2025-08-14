@@ -16,6 +16,6 @@ Implement specialized loss functions and flexible training procedures.
 - [ ] Test on various tasks
 
 ## Notes
-- Focus on losses like Focal, Dice, Triplet, Contrastive
-- Implement mixed precision training
-- Add gradient clipping and accumulation
+- Implement losses like Focal, Dice, Triplet using PyTorch or TensorFlow
+- Use libraries like torch.optim for optimizers and torch.amp for mixed precision
+- Implement gradient clipping with torch.nn.utils.clip_grad_norm_

@@ -16,5 +16,5 @@ Develop tools for analyzing medical images (X-rays, MRI, CT scans, etc.).
 
 ## Notes
 - Focus on specific medical condition (pneumonia, tumors, etc.)
-- Consider class imbalance in medical data
-- Implement proper cross-validation strategies
+- Use pydicom for DICOM file handling and SimpleITK for medical image processing
+- Consider class imbalance with scikit-learn's imbalanced-learn library

@@ -16,6 +16,6 @@ Create comprehensive tools for model analysis and performance visualization.
 - [ ] Create comparative analysis tools
 
 ## Notes
-- Focus on interpretability and explainability
-- Include CAM/Grad-CAM implementations
-- Add statistical significance testing
+- Use scikit-learn for metrics and matplotlib/seaborn for visualization
+- Implement CAM/Grad-CAM using captum or pytorch-grad-cam libraries
+- Use scipy.stats for statistical significance testing

@@ -16,5 +16,5 @@ Build an end-to-end object detection system.
 
 ## Notes
 - Consider real-time vs accuracy trade-offs
-- Implement bounding box visualization
-- Test on different object categories
+- Use libraries like ultralytics (YOLOv8), detectron2, or torchvision for detection
+- Implement bounding box visualization with OpenCV or matplotlib

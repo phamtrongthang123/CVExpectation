@@ -16,5 +16,5 @@ Build semantic or instance segmentation models for pixel-level classification.
 
 ## Notes
 - Consider semantic vs instance segmentation
-- Implement proper handling of class boundaries
-- Use appropriate loss functions (Dice, Focal loss)
+- Use segmentation_models_pytorch or TensorFlow for U-Net implementations
+- Implement Dice and IoU metrics using PyTorch or TensorFlow functions

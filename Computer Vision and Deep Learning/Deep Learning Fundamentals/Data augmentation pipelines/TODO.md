@@ -16,6 +16,6 @@ Build comprehensive data augmentation systems for computer vision.
 - [ ] Document best practices
 
 ## Notes
-- Include rotation, scaling, cropping, flipping
-- Add color jittering, noise, blur effects
-- Consider advanced techniques like MixUp, CutMix
+- Use libraries like albumentations, torchvision.transforms, or imgaug
+- Include rotation, scaling, cropping, flipping with OpenCV or PIL
+- Implement advanced techniques like MixUp and CutMix using PyTorch

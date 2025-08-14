@@ -17,5 +17,5 @@ Create a tool for real-time video analysis using computer vision models.
 
 ## Notes
 - Focus on performance and low latency
-- Support webcam and video file inputs
-- Consider using WebRTC for browser-based implementation
+- Support webcam and video file inputs using OpenCV
+- Consider using Streamlit or Flask for browser-based implementation

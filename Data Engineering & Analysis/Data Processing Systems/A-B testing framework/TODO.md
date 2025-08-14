@@ -16,6 +16,6 @@ Build a comprehensive framework for designing, running, and analyzing A/B tests.
 - [ ] Add multi-armed bandit algorithms
 
 ## Notes
-- Focus on statistical rigor and bias prevention
-- Implement proper significance testing
-- Consider network effects and interference
+- Use scipy.stats for statistical testing and numpy for randomization
+- Implement power calculations with statsmodels.stats.power
+- Use pandas for data manipulation and matplotlib for visualization

@@ -16,6 +16,6 @@ Build comprehensive tools for time series data analysis and forecasting.
 - [ ] Create automated reporting
 
 ## Notes
-- Support multiple time series formats and frequencies
-- Focus on both statistical and ML approaches
-- Implement proper cross-validation for time series
+- Use pandas for data manipulation and statsmodels for ARIMA
+- Implement Prophet (fbprophet) and LSTM with PyTorch/TensorFlow
+- Use scikit-learn for preprocessing and cross-validation

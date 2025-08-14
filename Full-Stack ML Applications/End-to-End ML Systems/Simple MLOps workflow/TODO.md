@@ -18,4 +18,4 @@ Implement a basic MLOps pipeline with CI/CD for machine learning projects.
 ## Notes
 - Start simple and iterate
 - Focus on reproducibility and automation
-- Consider using tools like MLflow, DVC, or Kubeflow
+- Use Python tools like MLflow, DVC, or GitHub Actions for CI/CD

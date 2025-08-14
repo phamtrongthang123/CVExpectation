@@ -5,11 +5,11 @@ Build a system for real-time model inference with low latency requirements.
 
 ## Tasks
 - [ ] Set up project structure
-- [ ] Choose inference framework (TensorRT, ONNX, etc.)
+- [ ] Choose inference framework (ONNX Runtime, TensorFlow Lite, PyTorch Mobile)
 - [ ] Implement model optimization techniques
 - [ ] Design streaming data pipeline
 - [ ] Add model caching and warming
-- [ ] Implement load balancing
+- [ ] Implement load balancing with Flask/FastAPI
 - [ ] Add monitoring and alerting
 - [ ] Create performance benchmarking
 - [ ] Implement fallback mechanisms
