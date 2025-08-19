@@ -7,3 +7,4 @@ Everything in this repository is designed to help you build a strong foundation 
 - Research-Level Projects
 
 The code will be the most simplest version possible, focusing on clarity and ease of understanding.
+In other words, all scripts can be run separately with `uv run script.py`

@@ -14,8 +14,8 @@ Build a CNN from scratch or fine-tune existing models for image classification.
 - [ ] Document results
 
 ## Notes
-- Consider using transfer learning with pre-trained models (torchvision, tensorflow.keras)
-- Experiment with different architectures using PyTorch or TensorFlow
+- Consider using transfer learning with pre-trained models (torchvision)
+- Experiment with different architectures using PyTorch
 - Use libraries like scikit-learn for metrics and matplotlib/seaborn for visualization
 - PyTorch Lightning can simplify training code and TorchMetrics for robust evaluation
 - Hugging Face transformers for vision transformers (ViT) and modern architectures
