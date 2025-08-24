@@ -2,21 +2,21 @@
 f0 = 3e6;                    % Center frequency [Hz]
 fs = 100e6;                  % Sampling frequency [Hz]
 c = 1540;                    % Speed of sound [m/s]
-lambda = c/f0;               % Wavelength [m]
-width = lambda/2;            % Element width
+lambda = c/f0;               % Wavelength [m], 1540/3e6 = 0.5133 mm
+width = lambda/2;            % Element width, 0.5133/2 = 0.25665 mm
 
 %% Transducer Geometry (C5-1 estimates)
-element_height = 10/1000;    % Height of element [m]
-kerf = width/10;             % Kerf [m]
-focus = [0 0 48]/1000;       % Fixed focal point at 4.8 cm [m]
-N_elements = 160;            % Number of elements
-N_active = 64;               % Active elements
-Rconvex = 55/1000;          % Radius of curvature [m]
+element_height = 10/1000;    % Height of element [m], 10 mm
+kerf = width/10;             % Kerf [m], 0.25665/10 = 0.025665 mm
+focus = [0 0 48]/1000;       % Fixed focal point at 4.8 cm [m], 48 mm
+N_elements = 160;            % Number of elements, 160
+N_active = 64;               % Active elements, 64
+Rconvex = 55/1000;          % Radius of curvature [m], 55 mm
 
 %% Set Field II sampling frequency
 set_sampling(fs);
 
-%% Generate CURVED apertures
+%% Generate CURVED apertures, 
 emit_aperture = xdc_convex_array(N_elements, width, element_height, kerf, Rconvex, 1, 5, focus);
 receive_aperture = xdc_convex_array(N_elements, width, element_height, kerf, Rconvex, 1, 5, focus);
 
