@@ -8,7 +8,7 @@ width = lambda/2;            % Element width, 0.5133/2 = 0.25665 mm
 %% Transducer Geometry (C5-1 estimates)
 element_height = 10/1000;    % Height of element [m], 10 mm
 kerf = width/10;             % Kerf [m], 0.25665/10 = 0.025665 mm
-focus = [0 0 48]/1000;       % Fixed focal point at 4.8 cm [m], 48 mm
+focus = [0 0 50]/1000;       % Fixed focal point at 5 cm [m]
 N_elements = 160;            % Number of elements, 160
 N_active = 64;               % Active elements, 64
 Rconvex = 55/1000;          % Radius of curvature [m], 55 mm
@@ -32,7 +32,7 @@ xdc_impulse(receive_aperture, impulse_response);
 %% Imaging parameters
 no_lines = N_elements - N_active + 1;  % Number of scan lines
 dx = width;                            % Lateral spacing
-z_focus = 48/1000;                    % Focus depth
+z_focus = 48/1000;                    % transmit focus 
 
 %% Pre-allocate storage
 image_data = zeros(1, no_lines);    % Estimate max size
