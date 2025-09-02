@@ -1,12 +1,12 @@
 #!/bin/bash
 #SBATCH --job-name=deepspeed-lightning
-#SBATCH --nodes=2
+#SBATCH --nodes=2                  # number of nodes you want to use. Pytorch lightning will automatically scale the number of GPUs based on the number of nodes defined here.
 #SBATCH --ntasks-per-node=1         # you will get warning of not honor but lightning still honors it. Not sure why.        
 #SBATCH --gres=gpu:1                 
-#SBATCH --cpus-per-task=8
+#SBATCH --cpus-per-task=8 
 #SBATCH --time=03:00:00
-#SBATCH --partition=agpu
-#SBATCH --constraint='1a100'
+#SBATCH --partition=agpu            # agpu is the gpu partition, make sure you have the correct constraint for the gpu you want to use.
+#SBATCH --constraint='1a100'        # 1a100 is the constraint for the gpu you want to use. Depends on the server, my server has "1a100" as a tag so I can use it.
 #SBATCH --output=logs/deepspeed_%j.out
 #SBATCH --error=logs/deepspeed_%j.err
 
