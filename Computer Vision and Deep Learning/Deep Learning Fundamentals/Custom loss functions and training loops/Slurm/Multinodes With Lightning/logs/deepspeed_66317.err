@@ -1,0 +1,16 @@
+srun: warning: can't honor --ntasks-per-node set to 1 which doesn't match the requested tasks 2 and -mpack, which forces min number of nodes to 1
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/home/tp030/try_multi_nodes/.venv/lib/python3.13/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+You are using a CUDA device ('NVIDIA A100-PCIE-40GB') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+initializing deepspeed distributed: GLOBAL_RANK: 0, MEMBER: 1/2
+initializing deepspeed distributed: GLOBAL_RANK: 1, MEMBER: 2/2
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+You have specified an optimizer and/or scheduler within the DeepSpeed config. It is recommended to define it in `LightningModule.configure_optimizers`.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+[rank1]:W0901 23:21:46.492000 3862422 .venv/lib/python3.13/site-packages/torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+[rank1]:W0901 23:21:46.492000 3862422 .venv/lib/python3.13/site-packages/torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'] to specific architectures.
+SLURM auto-requeueing enabled. Setting signal handlers.
+SLURM auto-requeueing enabled. Setting signal handlers.
+/home/tp030/try_multi_nodes/.venv/lib/python3.13/site-packages/pytorch_lightning/strategies/deepspeed.py:640: When saving the DeepSpeed Stage 3 checkpoint, each worker will save a shard of the checkpoint within a directory. If a single file is required after training, see https://lightning.ai/docs/pytorch/stable/advanced/model_parallel.html#deepspeed-zero-stage-3-single-file for instructions.
