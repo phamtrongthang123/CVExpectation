@@ -162,7 +162,7 @@ def main():
         action="store_true",
         help="Offload parameters to CPU (Stage 3)",
     )
-
+    parser.add_argument("--ckpt_path", default="", type=str, help="Path to checkpoint")
     args = parser.parse_args()
 
     # Initialize model and data
@@ -290,8 +290,11 @@ def main():
         total_params = sum(p.numel() for p in model.parameters())
         print(f"Total Parameters: {total_params:,}")
 
-    # Start training
-    trainer.fit(model, data_module)
+    # Start training. It it easy to just load ckpt path here, even if it is a folder from deepspeed.
+    if args.ckpt_path != "":
+        trainer.fit(model, data_module, ckpt_path=args.ckpt_path)
+    else:
+        trainer.fit(model, data_module)
 
 
 if __name__ == "__main__":
