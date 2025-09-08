@@ -19,4 +19,5 @@ export NCCL_DEBUG=INFO
 export CUDA_VISIBLE_DEVICES=0
 
 # this is actually more complex than normal srun python script.py because we have another extra apptainer env to run the script. Thankfully it behaves quite tame and doesn't require too much setup.
-srun apptainer exec --nv --writable-tmpfs --env VLLM_SKIP_P2P_CHECK=1 --bind /scrfs/storage/tp030/home:/scrfs/storage/tp030/home $HOME/qwenvl-2.5-cu121.sif bash -c "bash train_hpc.sh"
+# some machine need --export=ALL to srun successfully. 
+srun --export=ALL apptainer exec --nv --writable-tmpfs --env VLLM_SKIP_P2P_CHECK=1 --bind /scrfs/storage/tp030/home:/scrfs/storage/tp030/home $HOME/qwenvl-2.5-cu121.sif bash -c "bash train_hpc.sh"
