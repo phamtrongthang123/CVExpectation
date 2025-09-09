@@ -9,7 +9,9 @@ import torch.nn.functional as F
 from pytorch_lightning.strategies import DeepSpeedStrategy
 from torch.utils.data import DataLoader, random_split
 from torchvision import datasets, transforms
-
+from pytorch_lightning.plugins.environments import SLURMEnvironment, TorchElasticEnvironment
+SLURMEnvironment.detect = lambda: False
+TorchElasticEnvironment.validate_settings = lambda self, num_devices, num_nodes: True
 class LargeModel(pl.LightningModule):
     def __init__(self, learning_rate=1e-3, model_size="medium"):
         super().__init__()

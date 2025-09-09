@@ -1,0 +1,20 @@
++ TOTAL_NODES=3
++ MASTER_ADDR=c1912
++ OFFSET_RANK=2
++ GPUS_PER_NODE=4
++ nvidia-smi
++ export HOME=/scrfs/storage/tp030/home
++ HOME=/scrfs/storage/tp030/home
++ export OMP_NUM_THREADS=24
++ OMP_NUM_THREADS=24
++ export NCCL_DEBUG=INFO
++ NCCL_DEBUG=INFO
++ apptainer exec --nv --writable-tmpfs --env VLLM_SKIP_P2P_CHECK=1 --bind /scrfs/storage/tp030/home:/scrfs/storage/tp030/home /scrfs/storage/tp030/home/qwenvl-2.5-cu121.sif bash train.sh 3 c1912 2 4
+initializing deepspeed distributed: GLOBAL_RANK: 3, MEMBER: 4/6
+initializing deepspeed distributed: GLOBAL_RANK: 5, MEMBER: 6/6
+initializing deepspeed distributed: GLOBAL_RANK: 4, MEMBER: 5/6
+initializing deepspeed distributed: GLOBAL_RANK: 2, MEMBER: 3/6
+LOCAL_RANK: 2 - CUDA_VISIBLE_DEVICES: [0,1,2,3]
+LOCAL_RANK: 1 - CUDA_VISIBLE_DEVICES: [0,1,2,3]
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3]
+LOCAL_RANK: 3 - CUDA_VISIBLE_DEVICES: [0,1,2,3]

@@ -1,0 +1,348 @@
+Tue Sep  9 04:07:24 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.65.06              Driver Version: 580.65.06      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          Off |   00000000:01:00.0 Off |                    0 |
+| N/A   30C    P0             52W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100-SXM4-40GB          Off |   00000000:41:00.0 Off |                    0 |
+| N/A   29C    P0             49W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A100-SXM4-40GB          Off |   00000000:81:00.0 Off |                    0 |
+| N/A   29C    P0             51W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA A100-SXM4-40GB          Off |   00000000:C1:00.0 Off |                    0 |
+| N/A   30C    P0             51W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Tue Sep  9 04:07:26 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.65.06              Driver Version: 580.65.06      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          Off |   00000000:01:00.0 Off |                    0 |
+| N/A   30C    P0             57W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100-SXM4-40GB          Off |   00000000:41:00.0 Off |                    0 |
+| N/A   29C    P0             67W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A100-SXM4-40GB          Off |   00000000:81:00.0 Off |                    0 |
+| N/A   30C    P0             73W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA A100-SXM4-40GB          Off |   00000000:C1:00.0 Off |                    0 |
+| N/A   30C    P0             55W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+CUDA_HOME: /scrfs/storage/tp030/home/.conda/envs/control
+CUDA version:
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2023 NVIDIA Corporation
+Built on Tue_Feb__7_19:32:13_PST_2023
+Cuda compilation tools, release 12.1, V12.1.66
+Build cuda_12.1.r12.1/compiler.32415258_0
+Current Rank 2 LOCAL_RANK 0
+[2025-09-09 04:07:35,693] [INFO] [real_accelerator.py:260:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-09-09 04:07:35,698] [INFO] [real_accelerator.py:260:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-09-09 04:07:35,758] [INFO] [real_accelerator.py:260:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-09-09 04:07:35,891] [INFO] [real_accelerator.py:260:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-09-09 04:07:38,510] [INFO] [logging.py:107:log_dist] [Rank -1] [TorchCheckpointEngine] Initialized with serialization = False
+Distributed training: 1 nodes, 4 GPUs/node
+Global rank: 3, Node rank: 0, Local rank: 1
+[2025-09-09 04:07:38,520] [INFO] [logging.py:107:log_dist] [Rank -1] [TorchCheckpointEngine] Initialized with serialization = False
+Distributed training: 1 nodes, 4 GPUs/node
+Global rank: 5, Node rank: 1, Local rank: 3
+[2025-09-09 04:07:38,636] [INFO] [logging.py:107:log_dist] [Rank -1] [TorchCheckpointEngine] Initialized with serialization = False
+Distributed training: 1 nodes, 4 GPUs/node
+Global rank: 4, Node rank: 1, Local rank: 2
+[2025-09-09 04:07:38,692] [INFO] [logging.py:107:log_dist] [Rank -1] [TorchCheckpointEngine] Initialized with serialization = False
+Distributed training: 1 nodes, 4 GPUs/node
+Global rank: 2, Node rank: 0, Local rank: 0
+[2025-09-09 04:07:39,116] [INFO] [comm.py:821:init_distributed] cdb=None
+[2025-09-09 04:07:39,118] [INFO] [comm.py:821:init_distributed] cdb=None
+[2025-09-09 04:07:39,164] [INFO] [comm.py:821:init_distributed] cdb=None
+c2104:3365488:3365488 [1] NCCL INFO cudaDriverVersion 13000
+c2104:3365490:3365490 [3] NCCL INFO cudaDriverVersion 13000
+c2104:3365488:3365488 [1] NCCL INFO Bootstrap: Using ibp161s0:172.17.21.4<0>
+c2104:3365488:3365488 [1] NCCL INFO NCCL version 2.27.3+cuda12.9
+c2104:3365490:3365490 [3] NCCL INFO Bootstrap: Using ibp161s0:172.17.21.4<0>
+c2104:3365490:3365490 [3] NCCL INFO NCCL version 2.27.3+cuda12.9
+c2104:3365488:3365488 [1] NCCL INFO Comm config Blocking set to 1
+c2104:3365490:3365490 [3] NCCL INFO Comm config Blocking set to 1
+[2025-09-09 04:07:39,178] [INFO] [comm.py:821:init_distributed] cdb=None
+c2104:3365489:3365489 [2] NCCL INFO cudaDriverVersion 13000
+c2104:3365487:3365487 [0] NCCL INFO cudaDriverVersion 13000
+c2104:3365489:3365489 [2] NCCL INFO Bootstrap: Using ibp161s0:172.17.21.4<0>
+c2104:3365489:3365489 [2] NCCL INFO NCCL version 2.27.3+cuda12.9
+c2104:3365487:3365487 [0] NCCL INFO Bootstrap: Using ibp161s0:172.17.21.4<0>
+c2104:3365487:3365487 [0] NCCL INFO NCCL version 2.27.3+cuda12.9
+c2104:3365489:3365489 [2] NCCL INFO Comm config Blocking set to 1
+c2104:3365487:3365487 [0] NCCL INFO Comm config Blocking set to 1
+c2104:3365488:3365619 [1] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+c2104:3365490:3365620 [3] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+c2104:3365490:3365620 [3] NCCL INFO Failed to open libibverbs.so[.1]
+c2104:3365488:3365619 [1] NCCL INFO Failed to open libibverbs.so[.1]
+c2104:3365490:3365620 [3] NCCL INFO NET/Socket : Using [0]ibp161s0:172.17.21.4<0>
+c2104:3365488:3365619 [1] NCCL INFO NET/Socket : Using [0]ibp161s0:172.17.21.4<0>
+c2104:3365490:3365620 [3] NCCL INFO Initialized NET plugin Socket
+c2104:3365488:3365619 [1] NCCL INFO Initialized NET plugin Socket
+c2104:3365490:3365620 [3] NCCL INFO Assigned NET plugin Socket to comm
+c2104:3365490:3365620 [3] NCCL INFO Using network Socket
+c2104:3365488:3365619 [1] NCCL INFO Assigned NET plugin Socket to comm
+c2104:3365488:3365619 [1] NCCL INFO Using network Socket
+c2104:3365487:3365626 [0] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+c2104:3365490:3365620 [3] NCCL INFO ncclCommInitRankConfig comm 0x55c447b62890 rank 5 nranks 6 cudaDev 3 nvmlDev 3 busId c1000 commId 0x37898f1fbd7d1771 - Init START
+c2104:3365488:3365619 [1] NCCL INFO ncclCommInitRankConfig comm 0x55efd9fefb50 rank 3 nranks 6 cudaDev 1 nvmlDev 1 busId 41000 commId 0x37898f1fbd7d1771 - Init START
+c2104:3365487:3365626 [0] NCCL INFO Failed to open libibverbs.so[.1]
+c2104:3365487:3365626 [0] NCCL INFO NET/Socket : Using [0]ibp161s0:172.17.21.4<0>
+c2104:3365487:3365626 [0] NCCL INFO Initialized NET plugin Socket
+c2104:3365487:3365626 [0] NCCL INFO Assigned NET plugin Socket to comm
+c2104:3365487:3365626 [0] NCCL INFO Using network Socket
+c2104:3365487:3365626 [0] NCCL INFO ncclCommInitRankConfig comm 0x55dbe89f81b0 rank 2 nranks 6 cudaDev 0 nvmlDev 0 busId 1000 commId 0x37898f1fbd7d1771 - Init START
+c2104:3365489:3365625 [2] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+c2104:3365489:3365625 [2] NCCL INFO Failed to open libibverbs.so[.1]
+c2104:3365489:3365625 [2] NCCL INFO NET/Socket : Using [0]ibp161s0:172.17.21.4<0>
+c2104:3365489:3365625 [2] NCCL INFO Initialized NET plugin Socket
+c2104:3365489:3365625 [2] NCCL INFO Assigned NET plugin Socket to comm
+c2104:3365489:3365625 [2] NCCL INFO Using network Socket
+c2104:3365489:3365625 [2] NCCL INFO ncclCommInitRankConfig comm 0x55c5c433ef30 rank 4 nranks 6 cudaDev 2 nvmlDev 2 busId 81000 commId 0x37898f1fbd7d1771 - Init START
+c2104:3365488:3365619 [1] NCCL INFO RAS client listening socket at ::1<28028>
+c2104:3365490:3365620 [3] NCCL INFO RAS client listening socket at ::1<28028>
+c2104:3365489:3365625 [2] NCCL INFO RAS client listening socket at ::1<28028>
+c2104:3365487:3365626 [0] NCCL INFO RAS client listening socket at ::1<28028>
+c2104:3365490:3365620 [3] NCCL INFO Bootstrap timings total 1.223941 (create 0.000045, send 0.000526, recv 0.000424, ring 1.196686, delay 0.000004)
+c2104:3365489:3365625 [2] NCCL INFO Bootstrap timings total 1.198590 (create 0.000060, send 0.000189, recv 0.000443, ring 1.196695, delay 0.000003)
+c2104:3365487:3365626 [0] NCCL INFO Bootstrap timings total 1.218973 (create 0.000031, send 0.000117, recv 0.000242, ring 0.001453, delay 0.000003)
+c2104:3365488:3365619 [1] NCCL INFO Bootstrap timings total 1.224057 (create 0.000037, send 0.000539, recv 0.025416, ring 1.196894, delay 0.000002)
+c2104:3365487:3365626 [0] NCCL INFO Setting affinity for GPU 0 to 24-31
+c2104:3365487:3365626 [0] NCCL INFO NVLS multicast support is not available on dev 0 (NVLS_NCHANNELS 0)
+c2104:3365488:3365619 [1] NCCL INFO Setting affinity for GPU 1 to 8-15
+c2104:3365488:3365619 [1] NCCL INFO NVLS multicast support is not available on dev 1 (NVLS_NCHANNELS 0)
+c2104:3365490:3365620 [3] NCCL INFO Setting affinity for GPU 3 to 40-47
+c2104:3365490:3365620 [3] NCCL INFO NVLS multicast support is not available on dev 3 (NVLS_NCHANNELS 0)
+c2104:3365489:3365625 [2] NCCL INFO Setting affinity for GPU 2 to 56-63
+c2104:3365489:3365625 [2] NCCL INFO NVLS multicast support is not available on dev 2 (NVLS_NCHANNELS 0)
+c2104:3365487:3365626 [0] NCCL INFO comm 0x55dbe89f81b0 rank 2 nRanks 6 nNodes 3 localRanks 4 localRank 0 MNNVL 0
+c2104:3365490:3365620 [3] NCCL INFO comm 0x55c447b62890 rank 5 nRanks 6 nNodes 3 localRanks 4 localRank 3 MNNVL 0
+c2104:3365489:3365625 [2] NCCL INFO comm 0x55c5c433ef30 rank 4 nRanks 6 nNodes 3 localRanks 4 localRank 2 MNNVL 0
+c2104:3365488:3365619 [1] NCCL INFO comm 0x55efd9fefb50 rank 3 nRanks 6 nNodes 3 localRanks 4 localRank 1 MNNVL 0
+c2104:3365487:3365626 [0] NCCL INFO Trees [0] 3/-1/-1->2->0 [1] 3/-1/-1->2->0
+c2104:3365490:3365620 [3] NCCL INFO Trees [0] -1/-1/-1->5->4 [1] -1/-1/-1->5->4
+c2104:3365487:3365626 [0] NCCL INFO P2P Chunksize set to 131072
+c2104:3365490:3365620 [3] NCCL INFO P2P Chunksize set to 131072
+c2104:3365489:3365625 [2] NCCL INFO Trees [0] 5/-1/-1->4->3 [1] 5/-1/-1->4->3
+c2104:3365489:3365625 [2] NCCL INFO P2P Chunksize set to 131072
+c2104:3365488:3365619 [1] NCCL INFO Trees [0] 4/1/-1->3->2 [1] 4/-1/-1->3->2
+c2104:3365488:3365619 [1] NCCL INFO P2P Chunksize set to 131072
+c2104:3365487:3365626 [0] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+c2104:3365489:3365625 [2] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+c2104:3365487:3365635 [0] NCCL INFO [Proxy Service UDS] Device 0 CPU core 27
+c2104:3365489:3365636 [2] NCCL INFO [Proxy Service] Device 2 CPU core 58
+c2104:3365487:3365634 [0] NCCL INFO [Proxy Service] Device 0 CPU core 31
+c2104:3365489:3365637 [2] NCCL INFO [Proxy Service UDS] Device 2 CPU core 61
+c2104:3365490:3365620 [3] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+c2104:3365490:3365639 [3] NCCL INFO [Proxy Service UDS] Device 3 CPU core 41
+c2104:3365490:3365638 [3] NCCL INFO [Proxy Service] Device 3 CPU core 46
+c2104:3365488:3365619 [1] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+c2104:3365488:3365641 [1] NCCL INFO [Proxy Service UDS] Device 1 CPU core 11
+c2104:3365488:3365640 [1] NCCL INFO [Proxy Service] Device 1 CPU core 13
+c2104:3365489:3365625 [2] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 512 | 512
+c2104:3365489:3365625 [2] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 1 p2p channels per peer
+c2104:3365490:3365620 [3] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 512 | 512
+c2104:3365490:3365620 [3] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 1 p2p channels per peer
+c2104:3365487:3365626 [0] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 512 | 512
+c2104:3365487:3365626 [0] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 1 p2p channels per peer
+c2104:3365488:3365619 [1] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 512 | 512
+c2104:3365488:3365619 [1] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 1 p2p channels per peer
+c2104:3365488:3365619 [1] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+c2104:3365490:3365620 [3] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+c2104:3365487:3365626 [0] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+c2104:3365489:3365625 [2] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+c2104:3365488:3365619 [1] NCCL INFO ncclCommInitRankConfig comm 0x55efd9fefb50 rank 3 nranks 6 cudaDev 1 nvmlDev 1 busId 41000 commId 0x37898f1fbd7d1771 - Init COMPLETE
+c2104:3365489:3365625 [2] NCCL INFO ncclCommInitRankConfig comm 0x55c5c433ef30 rank 4 nranks 6 cudaDev 2 nvmlDev 2 busId 81000 commId 0x37898f1fbd7d1771 - Init COMPLETE
+c2104:3365488:3365619 [1] NCCL INFO Init timings - ncclCommInitRankConfig: rank 3 nranks 6 total 1.42 (kernels 0.12, alloc 0.02, bootstrap 1.22, allgathers 0.01, topo 0.02, graphs 0.00, connections 0.01, rest 0.01)
+c2104:3365489:3365625 [2] NCCL INFO Init timings - ncclCommInitRankConfig: rank 4 nranks 6 total 1.37 (kernels 0.12, alloc 0.01, bootstrap 1.20, allgathers 0.01, topo 0.03, graphs 0.00, connections 0.01, rest 0.01)
+c2104:3365490:3365620 [3] NCCL INFO ncclCommInitRankConfig comm 0x55c447b62890 rank 5 nranks 6 cudaDev 3 nvmlDev 3 busId c1000 commId 0x37898f1fbd7d1771 - Init COMPLETE
+c2104:3365487:3365626 [0] NCCL INFO ncclCommInitRankConfig comm 0x55dbe89f81b0 rank 2 nranks 6 cudaDev 0 nvmlDev 0 busId 1000 commId 0x37898f1fbd7d1771 - Init COMPLETE
+c2104:3365490:3365620 [3] NCCL INFO Init timings - ncclCommInitRankConfig: rank 5 nranks 6 total 1.42 (kernels 0.12, alloc 0.02, bootstrap 1.22, allgathers 0.01, topo 0.02, graphs 0.00, connections 0.01, rest 0.01)
+c2104:3365487:3365626 [0] NCCL INFO Init timings - ncclCommInitRankConfig: rank 2 nranks 6 total 1.37 (kernels 0.10, alloc 0.01, bootstrap 1.22, allgathers 0.01, topo 0.02, graphs 0.00, connections 0.01, rest 0.01)
+c2104:3365489:3365643 [2] NCCL INFO Channel 00/0 : 4[2] -> 5[3] via P2P/CUMEM/read
+c2104:3365489:3365643 [2] NCCL INFO Channel 01/0 : 4[2] -> 5[3] via P2P/CUMEM/read
+c2104:3365488:3365645 [1] NCCL INFO Channel 00/0 : 3[1] -> 4[2] via P2P/CUMEM/read
+c2104:3365488:3365645 [1] NCCL INFO Channel 01/0 : 3[1] -> 4[2] via P2P/CUMEM/read
+c2104:3365490:3365646 [3] NCCL INFO [Proxy Progress] Device 3 CPU core 47
+c2104:3365490:3365644 [3] NCCL INFO Channel 00/0 : 5[3] -> 0[0] [send] via NET/Socket/0
+c2104:3365490:3365644 [3] NCCL INFO Channel 01/0 : 5[3] -> 0[0] [send] via NET/Socket/0
+c2104:3365487:3365647 [0] NCCL INFO [Proxy Progress] Device 0 CPU core 29
+c2104:3365487:3365642 [0] NCCL INFO Channel 00/0 : 1[0] -> 2[0] [receive] via NET/Socket/0
+c2104:3365487:3365642 [0] NCCL INFO Channel 01/0 : 1[0] -> 2[0] [receive] via NET/Socket/0
+c2104:3365487:3365642 [0] NCCL INFO Channel 00/0 : 2[0] -> 3[1] via P2P/CUMEM/read
+c2104:3365487:3365642 [0] NCCL INFO Channel 01/0 : 2[0] -> 3[1] via P2P/CUMEM/read
+c2104:3365490:3365644 [3] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+c2104:3365489:3365643 [2] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+c2104:3365487:3365642 [0] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+c2104:3365488:3365645 [1] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+[Gloo] Rank 2 is connected to 5 peer ranks. Expected number of connected peer ranks is : 5
+[Gloo] Rank 3 is connected to 5 peer ranks. Expected number of connected peer ranks is : 5
+[Gloo] Rank [Gloo] Rank 4 is connected to 5 peer ranks. Expected number of connected peer ranks is : 5
+5 is connected to 5 peer ranks. Expected number of connected peer ranks is : 5
+c2104:3365487:3365662 [0] NCCL INFO Channel 00/0 : 0[0] -> 2[0] [receive] via NET/Socket/0
+c2104:3365487:3365662 [0] NCCL INFO Channel 01/0 : 0[0] -> 2[0] [receive] via NET/Socket/0
+c2104:3365490:3365664 [3] NCCL INFO Channel 00/0 : 5[3] -> 4[2] via P2P/CUMEM/read
+c2104:3365489:3365665 [2] NCCL INFO Channel 00/0 : 4[2] -> 3[1] via P2P/CUMEM/read
+c2104:3365489:3365665 [2] NCCL INFO Channel 01/0 : 4[2] -> 3[1] via P2P/CUMEM/read
+c2104:3365488:3365666 [1] NCCL INFO [Proxy Progress] Device 1 CPU core 12
+c2104:3365488:3365663 [1] NCCL INFO Channel 00/0 : 1[0] -> 3[1] [receive] via NET/Socket/0
+c2104:3365488:3365663 [1] NCCL INFO Channel 00/0 : 3[1] -> 1[0] [send] via NET/Socket/0
+c2104:3365488:3365663 [1] NCCL INFO Channel 00/0 : 3[1] -> 2[0] via P2P/CUMEM/read
+c2104:3365488:3365663 [1] NCCL INFO Channel 01/0 : 3[1] -> 2[0] via P2P/CUMEM/read
+c2104:3365490:3365664 [3] NCCL INFO Channel 01/0 : 5[3] -> 4[2] via P2P/CUMEM/read
+c2104:3365490:3365664 [3] NCCL INFO Connected all trees
+c2104:3365487:3365662 [0] NCCL INFO Channel 00/0 : 2[0] -> 0[0] [send] via NET/Socket/0
+c2104:3365487:3365662 [0] NCCL INFO Channel 01/0 : 2[0] -> 0[0] [send] via NET/Socket/0
+c2104:3365489:3365665 [2] NCCL INFO Connected all trees
+c2104:3365487:3365662 [0] NCCL INFO Connected all trees
+c2104:3365488:3365663 [1] NCCL INFO Connected all trees
+[2025-09-09 04:07:50,417] [INFO] [config.py:684:__init__] Config mesh_device None world_size = 6
+[2025-09-09 04:07:50,417] [INFO] [config.py:684:__init__] Config mesh_device None world_size = 6
+[2025-09-09 04:07:50,417] [INFO] [config.py:684:__init__] Config mesh_device None world_size = 6
+[2025-09-09 04:07:50,417] [INFO] [config.py:684:__init__] Config mesh_device None world_size = 6
+c2104:3365487:3365487 [0] NCCL INFO Comm config Blocking set to 1
+c2104:3365488:3365488 [1] NCCL INFO Comm config Blocking set to 1
+c2104:3365490:3365490 [3] NCCL INFO Comm config Blocking set to 1
+c2104:3365489:3365489 [2] NCCL INFO Comm config Blocking set to 1
+c2104:3365487:3365939 [0] NCCL INFO Assigned NET plugin Socket to comm
+c2104:3365487:3365939 [0] NCCL INFO Using network Socket
+c2104:3365490:3365943 [3] NCCL INFO Assigned NET plugin Socket to comm
+c2104:3365490:3365943 [3] NCCL INFO Using network Socket
+c2104:3365488:3365940 [1] NCCL INFO Assigned NET plugin Socket to comm
+c2104:3365488:3365940 [1] NCCL INFO Using network Socket
+c2104:3365487:3365939 [0] NCCL INFO ncclCommSplit comm 0x55dbe5905a00 rank 2 nranks 6 cudaDev 0 nvmlDev 0 busId 1000 parent 0x55dbe89f81b0 splitCount 1 color 1741855487 key 2- Init START
+c2104:3365489:3365946 [2] NCCL INFO Assigned NET plugin Socket to comm
+c2104:3365489:3365946 [2] NCCL INFO Using network Socket
+c2104:3365490:3365943 [3] NCCL INFO ncclCommSplit comm 0x55c444a72100 rank 5 nranks 6 cudaDev 3 nvmlDev 3 busId c1000 parent 0x55c447b62890 splitCount 1 color 1741855487 key 5- Init START
+c2104:3365488:3365940 [1] NCCL INFO ncclCommSplit comm 0x55efd6efdfc0 rank 3 nranks 6 cudaDev 1 nvmlDev 1 busId 41000 parent 0x55efd9fefb50 splitCount 1 color 1741855487 key 3- Init START
+c2104:3365489:3365946 [2] NCCL INFO ncclCommSplit comm 0x55c5c124a800 rank 4 nranks 6 cudaDev 2 nvmlDev 2 busId 81000 parent 0x55c5c433ef30 splitCount 1 color 1741855487 key 4- Init START
+c2104:3365488:3365940 [1] NCCL INFO Setting affinity for GPU 1 to 8-15
+c2104:3365488:3365940 [1] NCCL INFO NVLS multicast support is not available on dev 1 (NVLS_NCHANNELS 0)
+c2104:3365487:3365939 [0] NCCL INFO Setting affinity for GPU 0 to 24-31
+c2104:3365487:3365939 [0] NCCL INFO NVLS multicast support is not available on dev 0 (NVLS_NCHANNELS 0)
+c2104:3365489:3365946 [2] NCCL INFO Setting affinity for GPU 2 to 56-63
+c2104:3365490:3365943 [3] NCCL INFO Setting affinity for GPU 3 to 40-47
+c2104:3365490:3365943 [3] NCCL INFO NVLS multicast support is not available on dev 3 (NVLS_NCHANNELS 0)
+c2104:3365489:3365946 [2] NCCL INFO NVLS multicast support is not available on dev 2 (NVLS_NCHANNELS 0)
+c2104:3365487:3365939 [0] NCCL INFO comm 0x55dbe5905a00 rank 2 nRanks 6 nNodes 3 localRanks 4 localRank 0 MNNVL 0
+c2104:3365490:3365943 [3] NCCL INFO comm 0x55c444a72100 rank 5 nRanks 6 nNodes 3 localRanks 4 localRank 3 MNNVL 0
+c2104:3365488:3365940 [1] NCCL INFO comm 0x55efd6efdfc0 rank 3 nRanks 6 nNodes 3 localRanks 4 localRank 1 MNNVL 0
+c2104:3365487:3365939 [0] NCCL INFO Trees [0] 3/-1/-1->2->0 [1] 3/-1/-1->2->0
+c2104:3365489:3365946 [2] NCCL INFO comm 0x55c5c124a800 rank 4 nRanks 6 nNodes 3 localRanks 4 localRank 2 MNNVL 0
+c2104:3365487:3365939 [0] NCCL INFO P2P Chunksize set to 131072
+c2104:3365490:3365943 [3] NCCL INFO Trees [0] -1/-1/-1->5->4 [1] -1/-1/-1->5->4
+c2104:3365490:3365943 [3] NCCL INFO P2P Chunksize set to 131072
+c2104:3365488:3365940 [1] NCCL INFO Trees [0] 4/1/-1->3->2 [1] 4/-1/-1->3->2
+c2104:3365489:3365946 [2] NCCL INFO Trees [0] 5/-1/-1->4->3 [1] 5/-1/-1->4->3
+c2104:3365488:3365940 [1] NCCL INFO P2P Chunksize set to 131072
+c2104:3365489:3365946 [2] NCCL INFO P2P Chunksize set to 131072
+c2104:3365490:3365947 [3] NCCL INFO [Proxy Service] Device 3 CPU core 46
+c2104:3365490:3365951 [3] NCCL INFO [Proxy Service UDS] Device 3 CPU core 41
+c2104:3365489:3365950 [2] NCCL INFO [Proxy Service] Device 2 CPU core 62
+c2104:3365489:3365954 [2] NCCL INFO [Proxy Service UDS] Device 2 CPU core 58
+c2104:3365487:3365948 [0] NCCL INFO [Proxy Service] Device 0 CPU core 29
+c2104:3365488:3365953 [1] NCCL INFO [Proxy Service UDS] Device 1 CPU core 9
+c2104:3365487:3365952 [0] NCCL INFO [Proxy Service UDS] Device 0 CPU core 25
+c2104:3365488:3365949 [1] NCCL INFO [Proxy Service] Device 1 CPU core 12
+c2104:3365487:3365939 [0] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 512 | 512
+c2104:3365487:3365939 [0] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 1 p2p channels per peer
+c2104:3365490:3365943 [3] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 512 | 512
+c2104:3365490:3365943 [3] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 1 p2p channels per peer
+c2104:3365488:3365940 [1] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 512 | 512
+c2104:3365488:3365940 [1] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 1 p2p channels per peer
+c2104:3365489:3365946 [2] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 512 | 512
+c2104:3365489:3365946 [2] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 1 p2p channels per peer
+c2104:3365488:3365940 [1] NCCL INFO ncclCommSplit comm 0x55efd6efdfc0 rank 3 nranks 6 cudaDev 1 nvmlDev 1 busId 41000 parent 0x55efd9fefb50 splitCount 1 color 1741855487 key 3 - Init COMPLETE
+c2104:3365490:3365943 [3] NCCL INFO ncclCommSplit comm 0x55c444a72100 rank 5 nranks 6 cudaDev 3 nvmlDev 3 busId c1000 parent 0x55c447b62890 splitCount 1 color 1741855487 key 5 - Init COMPLETE
+c2104:3365487:3365939 [0] NCCL INFO ncclCommSplit comm 0x55dbe5905a00 rank 2 nranks 6 cudaDev 0 nvmlDev 0 busId 1000 parent 0x55dbe89f81b0 splitCount 1 color 1741855487 key 2 - Init COMPLETE
+c2104:3365488:3365940 [1] NCCL INFO Init timings - ncclCommSplit: rank 3 nranks 6 total 0.03 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.00, topo 0.01, graphs 0.00, connections 0.00, rest 0.01)
+c2104:3365490:3365943 [3] NCCL INFO Init timings - ncclCommSplit: rank 5 nranks 6 total 0.03 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.00, topo 0.01, graphs 0.00, connections 0.00, rest 0.01)
+c2104:3365489:3365946 [2] NCCL INFO ncclCommSplit comm 0x55c5c124a800 rank 4 nranks 6 cudaDev 2 nvmlDev 2 busId 81000 parent 0x55c5c433ef30 splitCount 1 color 1741855487 key 4 - Init COMPLETE
+c2104:3365487:3365939 [0] NCCL INFO Init timings - ncclCommSplit: rank 2 nranks 6 total 0.03 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.00, topo 0.01, graphs 0.00, connections 0.00, rest 0.01)
+c2104:3365489:3365946 [2] NCCL INFO Init timings - ncclCommSplit: rank 4 nranks 6 total 0.02 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.00, topo 0.01, graphs 0.00, connections 0.00, rest 0.00)
+c2104:3365489:3365956 [2] NCCL INFO Channel 00/0 : 4[2] -> 5[3] via P2P/CUMEM/read
+c2104:3365488:3365958 [1] NCCL INFO Channel 00/0 : 3[1] -> 4[2] via P2P/CUMEM/read
+c2104:3365489:3365956 [2] NCCL INFO Channel 01/0 : 4[2] -> 5[3] via P2P/CUMEM/read
+c2104:3365488:3365958 [1] NCCL INFO Channel 01/0 : 3[1] -> 4[2] via P2P/CUMEM/read
+c2104:3365490:3365959 [3] NCCL INFO [Proxy Progress] Device 3 CPU core 46
+c2104:3365487:3365960 [0] NCCL INFO [Proxy Progress] Device 0 CPU core 29
+c2104:3365490:3365957 [3] NCCL INFO Channel 00/0 : 5[3] -> 0[0] [send] via NET/Socket/0
+c2104:3365490:3365957 [3] NCCL INFO Channel 01/0 : 5[3] -> 0[0] [send] via NET/Socket/0
+c2104:3365487:3365955 [0] NCCL INFO Channel 00/0 : 1[0] -> 2[0] [receive] via NET/Socket/0
+c2104:3365487:3365955 [0] NCCL INFO Channel 01/0 : 1[0] -> 2[0] [receive] via NET/Socket/0
+c2104:3365487:3365955 [0] NCCL INFO Channel 00/0 : 2[0] -> 3[1] via P2P/CUMEM/read
+c2104:3365487:3365955 [0] NCCL INFO Channel 01/0 : 2[0] -> 3[1] via P2P/CUMEM/read
+c2104:3365489:3365956 [2] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+c2104:3365490:3365957 [3] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+c2104:3365488:3365958 [1] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+c2104:3365487:3365955 [0] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+Time to load fused_adam op: 22.544925928115845 secondsTime to load fused_adam op: 22.544909238815308 seconds
+
+Time to load fused_adam op: 22.54493260383606 seconds
+Time to load fused_adam op: 22.544908046722412 seconds
+[2025-09-09 04:08:13,051] [INFO] [config.py:684:__init__] Config mesh_device None world_size = 6
+[2025-09-09 04:08:13,051] [INFO] [config.py:684:__init__] Config mesh_device None world_size = 6
+[2025-09-09 04:08:13,051] [INFO] [config.py:684:__init__] Config mesh_device None world_size = 6
+[2025-09-09 04:08:13,051] [INFO] [config.py:684:__init__] Config mesh_device None world_size = 6
+[2025-09-09 04:08:15,071] [WARNING] [lr_schedules.py:686:get_lr] Attempting to get learning rate from scheduler before it has started
+[2025-09-09 04:08:15,071] [WARNING] [lr_schedules.py:686:get_lr] Attempting to get learning rate from scheduler before it has started
+[2025-09-09 04:08:15,071] [WARNING] [lr_schedules.py:686:get_lr] Attempting to get learning rate from scheduler before it has started
+[2025-09-09 04:08:15,072] [WARNING] [lr_schedules.py:686:get_lr] Attempting to get learning rate from scheduler before it has started
+c2104:3365490:3366640 [3] NCCL INFO Channel 00/0 : 5[3] -> 4[2] via P2P/CUMEM/read
+c2104:3365489:3366641 [2] NCCL INFO Channel 00/0 : 4[2] -> 3[1] via P2P/CUMEM/read
+c2104:3365489:3366641 [2] NCCL INFO Channel 01/0 : 4[2] -> 3[1] via P2P/CUMEM/read
+c2104:3365487:3366642 [0] NCCL INFO Channel 00/0 : 0[0] -> 2[0] [receive] via NET/Socket/0
+c2104:3365487:3366642 [0] NCCL INFO Channel 01/0 : 0[0] -> 2[0] [receive] via NET/Socket/0
+c2104:3365487:3366642 [0] NCCL INFO Channel 00/0 : 2[0] -> 0[0] [send] via NET/Socket/0
+c2104:3365487:3366642 [0] NCCL INFO Channel 01/0 : 2[0] -> 0[0] [send] via NET/Socket/0
+c2104:3365490:3366640 [3] NCCL INFO Channel 01/0 : 5[3] -> 4[2] via P2P/CUMEM/read
+c2104:3365488:3366643 [1] NCCL INFO [Proxy Progress] Device 1 CPU core 13
+c2104:3365488:3366639 [1] NCCL INFO Channel 00/0 : 1[0] -> 3[1] [receive] via NET/Socket/0
+c2104:3365488:3366639 [1] NCCL INFO Channel 00/0 : 3[1] -> 1[0] [send] via NET/Socket/0
+c2104:3365488:3366639 [1] NCCL INFO Channel 00/0 : 3[1] -> 2[0] via P2P/CUMEM/read
+c2104:3365488:3366639 [1] NCCL INFO Channel 01/0 : 3[1] -> 2[0] via P2P/CUMEM/read
+c2104:3365490:3366640 [3] NCCL INFO Connected all trees
+c2104:3365489:3366641 [2] NCCL INFO Connected all trees
+c2104:3365487:3366642 [0] NCCL INFO Connected all trees
+c2104:3365488:3366639 [1] NCCL INFO Connected all trees
+c2104:3365488:3365949 [1] NCCL INFO [Service thread] Connection closed by localRank 0
+c2104:3365488:3365640 [1] NCCL INFO [Service thread] Connection closed by localRank 0
+c2104:3365489:3365950 [0] NCCL INFO [Service thread] Connection closed by localRank 3
+c2104:3365489:3365636 [0] NCCL INFO [Service thread] Connection closed by localRank 3
+c2104:3365489:3365950 [0] NCCL INFO [Service thread] Connection closed by localRank 1
+c2104:3365489:3365636 [0] NCCL INFO [Service thread] Connection closed by localRank 1
