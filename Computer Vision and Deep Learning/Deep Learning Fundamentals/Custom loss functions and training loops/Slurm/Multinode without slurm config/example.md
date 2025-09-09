@@ -5,3 +5,5 @@ sbatch --nodelist c2104 --partition condo --job-name ita-wan-near-deadline --out
 ```
 Hiện tại có điểm yếu là do mình dùng zero3 offload nên nó compile cho 1 gpu => mình không mix gpu được.
 Nhưng generally combo sbatch -> srun -> apptainer -> torchrun -> real script sẽ tự động assign gpu cho mình được.
+
+Ngoài ra thì nhớ set auto cái devices và num nodes cho chính xác. Cũng như vô hiệu hóa function validate (check .py). 
