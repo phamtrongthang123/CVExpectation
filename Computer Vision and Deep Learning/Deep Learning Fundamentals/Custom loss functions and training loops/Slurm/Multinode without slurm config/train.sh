@@ -20,12 +20,10 @@ MASTER_ADDR=${2}
 OFFSET_RANK=${3}
 GPUS_PER_NODE=${4}
 CURRENT_RANK=$((SLURM_PROCID + OFFSET_RANK))
-MASTER_PORT=2010
-INIT_METHOD="tcp://${MASTER_ADDR}:${MASTER_PORT}"
+MASTER_PORT=12340
 
 source ../.venv/bin/activate
 
-echo 'Current Rank' ${CURRENT_RANK} 'LOCAL_RANK' ${SLURM_PROCID}
 torchrun --nnodes=${TOTAL_NODES} --nproc-per-node=${GPUS_PER_NODE} --master-port=${MASTER_PORT} \
     --master-addr ${MASTER_ADDR} --node-rank=${CURRENT_RANK} \
     train_deepspeed.py
