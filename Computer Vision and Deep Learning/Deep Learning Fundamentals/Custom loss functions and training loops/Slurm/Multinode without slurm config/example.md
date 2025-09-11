@@ -1,7 +1,5 @@
 ```bash
-sbatch --nodelist c1912,c2008 --partition agpu --job-name ita-wan-near-deadline --output slurm-logs/exp-2nodes-2GPUS-ita-wan-near-deadline/log-ita-wan-near-deadline-mrank0-agpu.log --error slurm-logs/exp-2nodes-2GPUS-ita-wan-near-deadline/err-ita-wan-near-deadline-mrank0-agpu.log --ntasks 2 --ntasks-per-node 1 --gres gpu:1 --cpus-per-task 64 --time 01:00:00  /scrfs/storage/tp030/home/ftvae/ita-mdt_code_wan_vae/multinode/srun_wraper.sh train_apptainer.sh 3 c1912 0 1
-
-sbatch --nodelist c2104 --partition condo --job-name ita-wan-near-deadline --output slurm-logs/exp-2nodes-2GPUS-ita-wan-near-deadline/log-ita-wan-near-deadline-mrank1-condo.log --error slurm-logs/exp-2nodes-2GPUS-ita-wan-near-deadline/err-ita-wan-near-deadline-mrank1-condo.log --ntasks 1 --ntasks-per-node 1 --gres gpu:4 --cpus-per-task 64 --time 01:00:00  /scrfs/storage/tp030/home/ftvae/ita-mdt_code_wan_vae/multinode/srun_wraper.sh train_apptainer.sh 3 c1912 2 4
+bash bash.sh
 ```
 Hiện tại có điểm yếu là do mình dùng zero3 offload nên nó compile cho 1 gpu => mình không mix gpu được.
 Nhưng generally combo sbatch -> srun -> apptainer -> torchrun -> real script sẽ tự động assign gpu cho mình được.
@@ -37,4 +35,4 @@ Và nếu là 4 nodes 4 tasks thì sẽ phân phối đều ra:
 # Tasks 2 go to node 3
 # Tasks 3 go to node 4
 ```
-tuy nhiên nếu máy chỉ có 1 gpu thì sẽ không bị vấn đề gì, nên ở trên mình để `sbatch --nodelist c1912,c2008` thì nó vẫn work fine vì 2 node đó chỉ có 1 gpu.
+tuy nhiên nếu máy chỉ có 1 gpu thì sẽ không bị vấn đề gì.

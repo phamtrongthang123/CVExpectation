@@ -1,14 +1,10 @@
 #!/bin/bash
-set -e
-set -x
-
 # TorchElastic distributed training arguments
 TOTAL_NODES=${1}
 MASTER_ADDR=${2}
 OFFSET_RANK=${3}
 GPUS_PER_NODE=${4}
 
-nvidia-smi
 export HOME="/scrfs/storage/tp030/home"
 export OMP_NUM_THREADS=24
 

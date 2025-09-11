@@ -23,6 +23,9 @@ CURRENT_RANK=$((SLURM_PROCID + OFFSET_RANK))
 MASTER_PORT=12340
 
 source ../.venv/bin/activate
+uv sync  # ensure environment is synced
+uv pip uninstall opencv-python opencv-python-headless
+uv pip install opencv-python-headless
 
 torchrun --nnodes=${TOTAL_NODES} --nproc-per-node=${GPUS_PER_NODE} --master-port=${MASTER_PORT} \
     --master-addr ${MASTER_ADDR} --node-rank=${CURRENT_RANK} \

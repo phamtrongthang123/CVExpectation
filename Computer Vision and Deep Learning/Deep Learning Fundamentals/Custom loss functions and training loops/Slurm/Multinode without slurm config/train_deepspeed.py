@@ -6,12 +6,18 @@ import pytorch_lightning as pl
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from pytorch_lightning.plugins.environments import (
+    SLURMEnvironment,
+    TorchElasticEnvironment,
+)
 from pytorch_lightning.strategies import DeepSpeedStrategy
 from torch.utils.data import DataLoader, random_split
 from torchvision import datasets, transforms
-from pytorch_lightning.plugins.environments import SLURMEnvironment, TorchElasticEnvironment
+
 SLURMEnvironment.detect = lambda: False
 TorchElasticEnvironment.validate_settings = lambda self, num_devices, num_nodes: True
+
+
 class LargeModel(pl.LightningModule):
     def __init__(self, learning_rate=1e-3, model_size="medium"):
         super().__init__()
@@ -208,7 +214,7 @@ def main():
             "contiguous_memory_optimization": False,
             "number_checkpoints": 4,
         },
-        "train_micro_batch_size_per_gpu": args.batch_size, # batch size per gpu, don't set total batch size here, let deep speed handle it.
+        "train_micro_batch_size_per_gpu": args.batch_size,  # batch size per gpu, don't set total batch size here, let deep speed handle it.
         "gradient_clipping": 1.0,
         "fp16": {
             "enabled": False,
@@ -218,7 +224,7 @@ def main():
             "hysteresis": 2,
             "min_loss_scale": 1,
         },
-        "bf16": {"enabled": True}, # i love bf16
+        "bf16": {"enabled": True},  # i love bf16
     }
 
     # Add CPU offloading options
@@ -251,11 +257,11 @@ def main():
     rank = int(os.environ.get("RANK", 0))
     local_rank = int(os.environ.get("LOCAL_RANK", 0))
     local_world_size = int(os.environ.get("LOCAL_WORLD_SIZE", 1))
-    
+
     # Calculate number of nodes based on world_size and local_world_size
     num_nodes = world_size // local_world_size if local_world_size > 0 else 1
     node_rank = rank // local_world_size if local_world_size > 0 else 0
-    
+
     if world_size > 1:
         print(f"Distributed training: {num_nodes} nodes, {local_world_size} GPUs/node")
         print(f"Global rank: {rank}, Node rank: {node_rank}, Local rank: {local_rank}")
@@ -269,14 +275,14 @@ def main():
         devices=local_world_size,  # Number of GPUs per node
         num_nodes=num_nodes,  # Number of nodes
         strategy=strategy,
-        precision="bf16-mixed", 
+        precision="bf16-mixed",
         # Important: DeepSpeed handles its own checkpointing
         enable_checkpointing=True,
         default_root_dir="./deepspeed_logs",
         # Logging
         log_every_n_steps=20,
         enable_progress_bar=True,
-        enable_model_summary=False, # not sure why but there is a bug at this moment of this codebase.
+        enable_model_summary=False,  # not sure why but there is a bug at this moment of this codebase.
         # Callbacks
         callbacks=[
             pl.callbacks.ModelCheckpoint(
@@ -293,7 +299,9 @@ def main():
 
     # Print training configuration
     if trainer.is_global_zero:
-        print(f"Training: {num_nodes} nodes, {world_size} world_size, DeepSpeed stage {args.deepspeed_stage}")
+        print(
+            f"Training: {num_nodes} nodes, {world_size} world_size, DeepSpeed stage {args.deepspeed_stage}"
+        )
         print(f"Global batch size: {args.batch_size * world_size}")
         total_params = sum(p.numel() for p in model.parameters())
         print(f"Model parameters: {total_params:,}")
