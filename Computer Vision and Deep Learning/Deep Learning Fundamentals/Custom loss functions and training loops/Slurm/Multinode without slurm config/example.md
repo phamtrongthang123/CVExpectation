@@ -42,7 +42,7 @@ Và nếu là 4 nodes 4 tasks thì sẽ phân phối đều ra:
 tuy nhiên nếu máy chỉ có 1 gpu thì sẽ không bị vấn đề gì.
 
 ### srun het-group nodes ntasks-per-node
-Có lưu ý là combo --nodes và --ntasks-per-node sẽ bổ trợ trong trường hợp --ntasks không được set đều. Combo không có conflict hiện tai là cyclic đi chung với define --nodes và --ntasks-per-node ngay srun. 
+Có lưu ý là combo --nodes và --ntasks-per-node sẽ bổ trợ --ntasks nếu không thì cyclic không biết phân bổ đi đâu => vẫn bị vấn đề overlap. Combo không có conflict hiện tại là cyclic đi chung với define --nodes và --ntasks-per-node ngay srun. 
 Có thể hiểu sbatch là để xin một lượng tài nguyên vô 1 pool, xong srun là để pick nhỏ ra để sử dụng. Nên cần define 2 lần.
 Ví dụ đây là case mà buộc phải set --nodes và --ntasks-per-node tại srun thì mới work. 
 ```bash
