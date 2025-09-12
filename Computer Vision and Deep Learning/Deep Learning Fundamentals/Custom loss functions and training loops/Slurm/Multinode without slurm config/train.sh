@@ -15,7 +15,7 @@ nvcc --version || echo "nvcc not found"
 
 # Additional PyTorch Lightning specific variables
 export PL_TORCH_DISTRIBUTED_BACKEND="nccl"
-TOTAL_NODES=${1}
+8NODES=${1}
 MASTER_ADDR=${2}
 OFFSET_RANK=${3}
 GPUS_PER_NODE=${4}
@@ -27,6 +27,6 @@ uv sync  # ensure environment is synced
 uv pip uninstall opencv-python opencv-python-headless
 uv pip install opencv-python-headless
 
-torchrun --nnodes=${TOTAL_NODES} --nproc-per-node=${GPUS_PER_NODE} --master-port=${MASTER_PORT} \
-    --master-addr ${MASTER_ADDR} --node-rank=${CURRENT_RANK} \
+torchrun --nnodes=${TOTAL_NODES} --nproc-per-node=${GPUS_PER_NODE} --node-rank=${CURRENT_RANK} \
+    --master-addr ${MASTER_ADDR} --master-port=${MASTER_PORT}  \
     train_deepspeed.py
