@@ -8,8 +8,10 @@ Nhưng generally combo sbatch -> srun -> apptainer -> torchrun -> real script s�
 
 Ngoài ra thì nhớ set auto cái devices và num nodes cho chính xác. Cũng như vô hiệu hóa function validate (check .py). 
 
+## SLURM environment 
+Mình print rất nhiều environment variables vào logs để tương lai có thể tính được slurm có những flag nào để mò lại. Slurm version hiện tại là 23.11.3. Với version slurm trước 17 thì sẽ phải chạy sbatch / torchrun ở từng máy lẻ, xong connect qua IP (nhiều người dùng rendezvous endpoint cho mục đích này). Slurm version 17+ cho phép mình set srun ngay trong 1 bash script và tận dụng được nhiều built-in feature trong cùng 1 sbatch environment. Một trong những feature mình thích nhất là nếu mình cần nhiều nodes thì slurm sẽ chờ khi có thể cấp đủ thì mới chạy cho mình. Nó hành xử như một job. Ngoài ra thì nó share chung 1 log file.
 
-## tricky part
+## tricky part with task distribution
 
 ### cyclic distribution
 Ví dụ mình có 4 gpus nhưng 1 task cho 1 máy => fine. 
