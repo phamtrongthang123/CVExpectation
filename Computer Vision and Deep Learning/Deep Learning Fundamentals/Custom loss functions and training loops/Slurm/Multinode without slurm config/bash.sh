@@ -22,12 +22,16 @@
 #SBATCH --gres=gpu:4
 #SBATCH --cpus-per-task=64
 
+# From now on, unless you use more than one cluster or more complex threading/processes, you don't need to change anything below except the sbatch flags above and the script training path. 
+SCRIPT_TRAINING=train_apptainer.sh 
+
 echo "Heterogeneous job leader (component 0) starting on $(hostname)"
 echo "SLURM_JOB_ID=${SLURM_JOB_ID}"
+TOTAL_NODES=$(env | awk -F= '/^SLURM_JOB_NUM_NODES_HET_GROUP_/ {sum += $2} END {print (sum ? sum : 0)}')
 
-SCRIPT_TRAINING=train_apptainer.sh 
-srun --het-group=0 --nodes 2 --ntasks-per-node=1 bash -c "bash $SCRIPT_TRAINING 3 $(hostname) 0 1" &
-srun --het-group=1 --nodes 1 --ntasks-per-node=1  bash -c "bash $SCRIPT_TRAINING 3 $(hostname) 2 4" &
+SLURM_JOB_NUM_NODES_HET_GROUP_Th=0
+srun --het-group=0 --nodes=$SLURM_JOB_NUM_NODES_HET_GROUP_0 --ntasks-per-node=1 bash -c "bash $SCRIPT_TRAINING $TOTAL_NODES $(hostname) $SLURM_JOB_NUM_NODES_HET_GROUP_Th" &
+srun --het-group=1 --nodes=$SLURM_JOB_NUM_NODES_HET_GROUP_1 --ntasks-per-node=1 bash -c "bash $SCRIPT_TRAINING $TOTAL_NODES $(hostname) $SLURM_JOB_NUM_NODES_HET_GROUP_0" &
 
 wait
 echo "Done printing hostnames."
