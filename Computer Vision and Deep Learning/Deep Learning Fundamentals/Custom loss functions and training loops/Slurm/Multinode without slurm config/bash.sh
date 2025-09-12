@@ -29,6 +29,7 @@ echo "Heterogeneous job leader (component 0) starting on $(hostname)"
 echo "SLURM_JOB_ID=${SLURM_JOB_ID}"
 TOTAL_NODES=$(env | awk -F= '/^SLURM_JOB_NUM_NODES_HET_GROUP_/ {sum += $2} END {print (sum ? sum : 0)}')
 
+# technically you can for loop here, but I prefer to roll out by hand right now because the goal is to keep it easy to catch up as much concept about SLURM environment as possible, not bash script nor python. 
 SLURM_JOB_NUM_NODES_HET_GROUP_Th=0
 srun --het-group=0 --nodes=$SLURM_JOB_NUM_NODES_HET_GROUP_0 --ntasks-per-node=1 bash -c "bash $SCRIPT_TRAINING $TOTAL_NODES $(hostname) $SLURM_JOB_NUM_NODES_HET_GROUP_Th" &
 srun --het-group=1 --nodes=$SLURM_JOB_NUM_NODES_HET_GROUP_1 --ntasks-per-node=1 bash -c "bash $SCRIPT_TRAINING $TOTAL_NODES $(hostname) $SLURM_JOB_NUM_NODES_HET_GROUP_0" &
