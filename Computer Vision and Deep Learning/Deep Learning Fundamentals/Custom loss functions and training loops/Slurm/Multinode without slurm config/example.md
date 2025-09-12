@@ -44,7 +44,7 @@ tuy nhiên nếu máy chỉ có 1 gpu thì sẽ không bị vấn đề gì.
 ### srun het-group nodes ntasks-per-node
 Có lưu ý là combo --nodes và --ntasks-per-node sẽ bổ trợ --ntasks nếu không thì cyclic không biết phân bổ đi đâu => vẫn bị vấn đề overlap. Combo không có conflict hiện tại là cyclic đi chung với define --nodes và --ntasks-per-node ngay srun. 
 Có thể hiểu sbatch là để xin một lượng tài nguyên vô 1 pool, xong srun là để pick nhỏ ra để sử dụng. Nên cần define 2 lần.
-Ví dụ đây là case mà buộc phải set --nodes và --ntasks-per-node tại srun thì mới work. 
+Ví dụ đây là case mà buộc phải set --nodes và --ntasks-per-node tại srun thay vì chỉ --ntasks thì mới work. 
 ```bash
 #!/bin/bash
 #SBATCH --job-name=name
@@ -75,9 +75,9 @@ Ví dụ đây là case mà buộc phải set --nodes và --ntasks-per-node tạ
 echo "Heterogeneous job leader (component 0) starting on $(hostname)"
 echo "SLURM_JOB_ID=${SLURM_JOB_ID}"
 
-SCRIPT_TRAINING=train_apptainer_l1_multinode.sh 
-srun --het-group=0 --nodes=4 --ntasks-per-node=1 bash -c "bash $SCRIPT_TRAINING 6 $(hostname) 0 4" &
-srun --het-group=1 --nodes=2 --ntasks-per-node=1 bash -c "bash $SCRIPT_TRAINING 6 $(hostname) 4 4" &
+SCRIPT_TRAINING=train_apptainer.sh 
+srun --het-group=0 --nodes=4 --ntasks-per-node=1 bash -c "bash $SCRIPT_TRAINING 6 $(hostname) 0" &
+srun --het-group=1 --nodes=2 --ntasks-per-node=1 bash -c "bash $SCRIPT_TRAINING 6 $(hostname) 4" &
 
 wait
 echo "Done printing hostnames."
