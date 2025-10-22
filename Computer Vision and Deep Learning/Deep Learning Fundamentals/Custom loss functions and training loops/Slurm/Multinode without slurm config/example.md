@@ -1,52 +1,65 @@
+Just call:
 ```bash
 bash bash.sh
 ```
-Trong file bash.sh đấy là syntax để slurm tự handle kiếm nodes cho mình bằng combo constraint + partition. Nhìn gọn và cần thủ công tùy lúc, nhưng nhìn chung sẽ giúp ích long term vì nếu cần thì cứ đọc docs của slurm.
 
-Hiện tại có điểm yếu là do mình dùng zero3 offload nên nó compile cho 1 gpu => mình không mix gpu được.
-Nhưng generally combo sbatch -> srun -> apptainer -> torchrun -> real script sẽ tự động assign gpu cho mình được.
+In the bash.sh file, there's syntax for Slurm to automatically handle finding nodes for you using a combination of constraint + partition. It looks clean and requires manual adjustment from time to time, but overall it's helpful long-term because you can just read Slurm's documentation when needed.
 
-Ngoài ra thì nhớ set auto cái devices và num nodes cho chính xác. Cũng như vô hiệu hóa function validate (check .py). 
+Currently, there's a weakness: since I'm using zero3 offload, it compiles for 1 GPU => I can't mix GPUs.
 
-## SLURM environment 
-Mình print rất nhiều environment variables vào logs để tương lai có thể tính được slurm có những flag nào để mò lại. Slurm version hiện tại là 23.11.3. Với version slurm trước 17 thì sẽ phải chạy sbatch / torchrun ở từng máy lẻ, xong connect qua IP (nhiều người dùng rendezvous endpoint cho mục đích này). Slurm version 17+ cho phép mình set srun ngay trong 1 bash script và tận dụng được nhiều built-in feature trong cùng 1 sbatch environment. Một trong những feature mình thích nhất là nếu mình cần nhiều nodes thì slurm sẽ chờ khi có thể cấp đủ thì mới chạy cho mình. Nó hành xử như một job. Ngoài ra thì nó share chung 1 log file.
+However, generally the combo of sbatch -> srun -> apptainer -> torchrun -> actual script will automatically assign GPUs for you.
 
-## tricky part with task distribution
+Additionally, remember to set devices and num nodes automatically for accuracy. Also disable the validate function (check .py file).
 
-### cyclic distribution
-Ví dụ mình có 4 gpus nhưng 1 task cho 1 máy => fine. 
-Nhưng có 4 nodes, mỗi node có 4 gpus, nhưng có 4 task => by default script hiện tại sẽ phân phát cả 4 tasks cho node đầu tiên vì nó đếm thấy có 4 gpus. Nó conflict với torchelastic (tự tăng gpu lên) => OOM hoặc nhiều job 1 gpu device. 
+## SLURM Environment
 
-Một cách fix là dùng distributed cyclic 
-Ví dụ 3 nodes 9 tasks sẽ phân phối như dưới
+I print many environment variables to logs so in the future I can figure out what flags Slurm has for reference. Current Slurm version is 23.11.3. With Slurm versions before 17, you had to run sbatch/torchrun on each individual machine, then connect via IP (many people use rendezvous endpoint for this purpose). Slurm version 17+ allows you to set srun directly within a bash script and take advantage of many built-in features within the same sbatch environment. One of my favorite features is that if I need multiple nodes, Slurm will wait until it can allocate enough before running. It behaves like a job. Additionally, it shares a single log file.
+
+## Tricky Part with Task Distribution
+
+### Cyclic Distribution
+
+For example, if I have 4 GPUs but 1 task per machine => fine.
+
+But with 4 nodes, each node having 4 GPUs, but only 4 tasks => by default the current script will distribute all 4 tasks to the first node because it counts 4 GPUs available. This conflicts with torchelastic (which automatically scales up GPUs) => OOM or multiple jobs on one GPU device.
+
+One fix is to use cyclic distribution.
+
+For example, 3 nodes with 9 tasks will distribute as follows:
+
 ```bash
 #!/bin/bash
 #SBATCH --nodes=3
 #SBATCH --ntasks=9
 #SBATCH --distribution=cyclic
-
 # Tasks 0,3,6 go to node 1
 # Tasks 1,4,7 go to node 2  
 # Tasks 2,5,8 go to node 3
 ```
-Và nếu là 4 nodes 4 tasks thì sẽ phân phối đều ra: 
+
+And with 4 nodes and 4 tasks, it will distribute evenly:
+
 ```bash
 #!/bin/bash
 #SBATCH --nodes=4
 #SBATCH --ntasks=4
 #SBATCH --distribution=cyclic
-
-# Tasks 0 go to node 1
-# Tasks 1 go to node 2  
-# Tasks 2 go to node 3
-# Tasks 3 go to node 4
+# Task 0 goes to node 1
+# Task 1 goes to node 2  
+# Task 2 goes to node 3
+# Task 3 goes to node 4
 ```
-tuy nhiên nếu máy chỉ có 1 gpu thì sẽ không bị vấn đề gì.
+
+However, if a machine only has 1 GPU, there won't be any issues.
 
 ### srun het-group nodes ntasks-per-node
-Có lưu ý là combo --nodes và --ntasks-per-node sẽ bổ trợ --ntasks nếu không thì cyclic không biết phân bổ đi đâu => vẫn bị vấn đề overlap. Combo không có conflict hiện tại là cyclic đi chung với define --nodes và --ntasks-per-node ngay srun. 
-Có thể hiểu sbatch là để xin một lượng tài nguyên vô 1 pool, xong srun là để pick nhỏ ra để sử dụng. Nên cần define 2 lần.
-Ví dụ đây là case mà buộc phải set --nodes và --ntasks-per-node tại srun thay vì chỉ --ntasks thì mới work. 
+
+Note that the combo of --nodes and --ntasks-per-node will complement --ntasks, otherwise cyclic doesn't know how to distribute => still has overlap issues. The non-conflicting combo currently is cyclic paired with defining --nodes and --ntasks-per-node directly at srun.
+
+You can think of sbatch as requesting a pool of resources, then srun is for picking smaller portions to use. So you need to define twice.
+
+For example, here's a case where you must set --nodes and --ntasks-per-node at srun instead of just --ntasks for it to work:
+
 ```bash
 #!/bin/bash
 #SBATCH --job-name=name
@@ -56,7 +69,6 @@ Ví dụ đây là case mà buộc phải set --nodes và --ntasks-per-node tạ
 #SBATCH --distribution=cyclic
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=tp030@uark.edu
-
 # Heterogeneous job component 1: AA cluster
 #SBATCH --nodes=4
 #SBATCH --partition=AA
@@ -64,7 +76,6 @@ Ví dụ đây là case mà buộc phải set --nodes và --ntasks-per-node tạ
 #SBATCH --constraint=public&4a100
 #SBATCH --gres=gpu:4
 #SBATCH --cpus-per-task=64
-
 # Heterogeneous job component 2: B cluster
 #SBATCH hetjob
 #SBATCH --partition=B
@@ -73,14 +84,11 @@ Ví dụ đây là case mà buộc phải set --nodes và --ntasks-per-node tạ
 #SBATCH --constraint=public2&4a100
 #SBATCH --gres=gpu:4
 #SBATCH --cpus-per-task=64
-
 echo "Heterogeneous job leader (component 0) starting on $(hostname)"
 echo "SLURM_JOB_ID=${SLURM_JOB_ID}"
-
 SCRIPT_TRAINING=train_apptainer.sh 
 srun --het-group=0 --nodes=4 --ntasks-per-node=1 bash -c "bash $SCRIPT_TRAINING 6 $(hostname) 0" &
 srun --het-group=1 --nodes=2 --ntasks-per-node=1 bash -c "bash $SCRIPT_TRAINING 6 $(hostname) 4" &
-
 wait
 echo "Done printing hostnames."
 ```
