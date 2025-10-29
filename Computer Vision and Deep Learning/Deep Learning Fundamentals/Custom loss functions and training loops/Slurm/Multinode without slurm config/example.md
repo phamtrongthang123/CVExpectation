@@ -15,6 +15,19 @@ Additionally, remember to set devices and num nodes automatically for accuracy. 
 
 I print many environment variables to logs so in the future I can figure out what flags Slurm has for reference. Current Slurm version is 23.11.3. With Slurm versions before 17, you had to run sbatch/torchrun on each individual machine, then connect via IP (many people use rendezvous endpoint for this purpose). Slurm version 17+ allows you to set srun directly within a bash script and take advantage of many built-in features within the same sbatch environment. One of my favorite features is that if I need multiple nodes, Slurm will wait until it can allocate enough before running. It behaves like a job. Additionally, it shares a single log file.
 
+## Apptainer container with no conda
+We can still use source. 
+First, find the location of conda in the main machine: 
+```
+conda info --base
+# return /share/conda
+```
+
+Then simply (assume the env's name is pytorch3d): 
+```
+source /share/conda/bin/activate pytorch3d
+```
+
 ## Tricky Part with Task Distribution
 
 ### Cyclic Distribution
