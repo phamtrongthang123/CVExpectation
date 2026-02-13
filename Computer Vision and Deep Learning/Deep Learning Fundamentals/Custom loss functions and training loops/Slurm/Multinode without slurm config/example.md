@@ -65,6 +65,8 @@ And with 4 nodes and 4 tasks, it will distribute evenly:
 
 However, if a machine only has 1 GPU, there won't be any issues.
 
+**Note**: Using this logic, let's say you don't want to use my framework, but you just want to use a repo that can already work with a multi gpu machine, and you only want to extend to multiple machine with the same gpus. Then you can simply set more number of nodes, and add distribution cyclic. That's should be it. 
+
 ### srun het-group nodes ntasks-per-node
 
 Note that the combo of --nodes and --ntasks-per-node will complement --ntasks, otherwise cyclic doesn't know how to distribute => still has overlap issues. The non-conflicting combo currently is cyclic paired with defining --nodes and --ntasks-per-node directly at srun.
